@@ -19,14 +19,15 @@ const CategoryGridTile = ({ title, onSelect, color }) => {
         </View>
     );
 }
-
+ 
 const styles = StyleSheet.create({
     gridItem: {
         flex: 1,
         margin: 15,
         height: 150,
         borderRadius: 10,
-        overflow: 'hidden'
+        elevation: 5,
+        overflow: Platform.OS === 'android'? 'hidden' : 'visible'
     },
     item: {
         flex: 1,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         shadowOffset: {width: 0, height: 5},
         shadowOpacity: 0.26,
-        elevation: 5
+       
     },
     text: {
         fontFamily: 'open-sans-bold',
